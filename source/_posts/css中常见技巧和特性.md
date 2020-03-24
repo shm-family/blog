@@ -6,7 +6,7 @@ tags:
 对css一些常见用法和特性的整理
 
 
-### FlexBox和决定定位
+## FlexBox和决定定位
 
 也许你会认为：当在在弹性盒子中放置绝对定位元素时，它将不再是弹性盒子中的一部分。
 但是；如果将子元素设置为绝对定位，但不设置任何top/right/bottom/left属性，则flexbox仍然起作用。
@@ -19,18 +19,131 @@ tags:
   (<a href='https://codepen.io/ryanypm'>@ryanypm</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-### box-sizing
+<br>
+<br>
 
- box-sizing定义了 user agent 应该如何计算一个元素的总宽度和总高度。
+***
+
+<br>
+<br>
+
+## content 属性 attr
 
 ```
-    box-sizing的常用属性有:
-    content-box
-    border-box
+// html
+<div data-tip="这是一个提示">
+  鼠标放这里
+</div>
+
+// css
+div {
+  position: relative;
+  font-size: 14px;
+  color: #333;
+  background-color: red;
+  display: inline-block;
+  margin-top: 100px;
+}
+
+div:hover::after {
+  content: attr(data-tip);
+  font-size: 12px;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  left: 0;
+  top: -40px;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+div:hover::before {
+  content: "";
+  border-width: 6px;
+  border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+  border-style: solid;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
 ```
-常用的场景是列表:
 
-![](/blog-site/images/box-sizing-demo.png)
+<br>
+<br>
 
-当横排的列表设置了固定宽度时，子元素同时设置了border边框，当子元素数量超过一定数量时会超过父容器。
-当我们设置了: box-sizing: border-box;的时候，计算方式会以padding+content+border作为内容宽度。这样子元素的内容宽度就会包含border不会超出父容器。
+<iframe height="265" style="width: 100%;" scrolling="no" title="content 属性 attr" src="https://codepen.io/ryanypm/embed/mdJzmzM?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/ryanypm/pen/mdJzmzM'>content 属性 attr</a> by ryanypm
+  (<a href='https://codepen.io/ryanypm'>@ryanypm</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<br>
+<br>
+<br>
+
+## :valid 和 :invalid 表单即时校验
+
+```
+<form>
+  <div class="form-group">
+    <label>name</label>
+    <input type="text" required placeholder="请输入名称">
+  </div>
+  <div class="form-group">
+    <label>email</label>
+    <input type="email" required placeholder="请输入邮箱">
+  </div>
+  <div class="form-group">
+    <label>homepage</label>
+    <input type="url" placeholder="请输入url">
+  </div>
+</form>
+```
+
+<br>
+
+<iframe height="265" style="width: 100%;" scrolling="no" title=":valid 和 :invalid 表单即时校验" src="https://codepen.io/ryanypm/embed/WNvaObL?height=265&theme-id=dark&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/ryanypm/pen/WNvaObL'>:valid 和 :invalid 表单即时校验</a> by ryanypm
+  (<a href='https://codepen.io/ryanypm'>@ryanypm</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<br>
+<br>
+
+## 锚点元素 :target
+
+```
+.collapse {
+  width: 600px;
+}
+.collapse-item {
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+}
+
+.collapse-item a {
+  text-decoration: none;
+  padding: 5px 15px;
+  display: block;
+  color: #337ab7;
+}
+
+.collapse-item .collapse-body {
+  display: none;
+  padding: 10px 15px;
+}
+
+.collapse-item .collapse-body:target {
+  display: block;
+}
+
+```
+
+<br>
+
+<iframe height="465" style="width: 100%;" scrolling="no" title="锚点元素 :target" src="https://codepen.io/ryanypm/embed/wvaYeeN?height=265&theme-id=dark&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/ryanypm/pen/wvaYeeN'>锚点元素 :target</a> by ryanypm
+  (<a href='https://codepen.io/ryanypm'>@ryanypm</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
