@@ -6,7 +6,7 @@ tags:
 对css一些常见用法和特性的整理
 
 
-## FlexBox和决定定位
+# FlexBox和决定定位
 
 也许你会认为：当在在弹性盒子中放置绝对定位元素时，它将不再是弹性盒子中的一部分。
 但是；如果将子元素设置为绝对定位，但不设置任何top/right/bottom/left属性，则flexbox仍然起作用。
@@ -24,10 +24,7 @@ tags:
 
 ***
 
-<br>
-<br>
-
-## content 属性 attr
+# content 属性 attr
 
 ```
 // html
@@ -83,7 +80,7 @@ div:hover::before {
 <br>
 <br>
 
-## :valid 和 :invalid 表单即时校验
+# :valid 和 :invalid 表单即时校验
 
 ```
 <form>
@@ -112,7 +109,7 @@ div:hover::before {
 <br>
 <br>
 
-## 锚点元素 :target
+# 锚点元素 :target
 
 ```
 .collapse {
