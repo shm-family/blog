@@ -12,8 +12,6 @@ tags:
 但是；如果将子元素设置为绝对定位，但不设置任何top/right/bottom/left属性，则flexbox仍然起作用。
 奇怪的是，它是存在一定意义的。当把`position: absolute;`应用到元素上时，它会停留在原处，甚至会随着内容大小一起调整，直到设置定位属性。因为它除了不影响其他任何内容之外，没有任何具体的定位说明。
 
-<a href="https://www.chenhuijing.com/blog/flexbox-and-absolute-positioning/#%F0%9F%8E%AE" target="__black">具体参考```陈慧静博客```</a>
-
 <iframe height="400" style="width: 100%;" scrolling="no" title="flexbox和就绝对定位" src="https://codepen.io/ryanypm/embed/wvaXLxG?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/ryanypm/pen/wvaXLxG'>flexbox和就绝对定位</a> by ryanypm
   (<a href='https://codepen.io/ryanypm'>@ryanypm</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -144,3 +142,57 @@ div:hover::before {
   See the Pen <a href='https://codepen.io/ryanypm/pen/wvaYeeN'>锚点元素 :target</a> by ryanypm
   (<a href='https://codepen.io/ryanypm'>@ryanypm</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+# 元素左右对齐
+> margin-left: auto;
+```
+<div class="box">
+  <div class="cover"></div>
+  <div class="info">
+    <h5>你的名字</h5>
+    <p>梦想在诗和远方</p>
+  </div>
+  <button>关注我</button>
+</div>
+```
+
+<iframe height="265" style="width: 100%;" scrolling="no" title="元素两端对齐" src="https://codepen.io/ryanypm/embed/zYGMVOV?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/ryanypm/pen/zYGMVOV'>元素两端对齐</a> by ryanypm
+  (<a href='https://codepen.io/ryanypm'>@ryanypm</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# 通过css设置rem
+
+```
+html {
+  font-size: calc(100vw / 7.5);
+}
+```
+
+# 设置圆角边框头像
+
+<iframe height="265" style="width: 100%;" scrolling="no" title="background-clip" src="https://codepen.io/ryanypm/embed/mdJabEy?height=265&theme-id=dark&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/ryanypm/pen/mdJabEy'>background-clip</a> by ryanypm
+  (<a href='https://codepen.io/ryanypm'>@ryanypm</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# ::first-letter 段落首字间隔
+```
+p::first-letter{
+  font-size: 6em;
+  line-height: 1;
+  float: left;
+}
+
+p {
+  width: 500px;
+}
+```
+
+<iframe height="265" style="width: 100%;" scrolling="no" title="用::first-letter来实现段落首字间隔" src="https://codepen.io/ryanypm/embed/zYGyObX?height=265&theme-id=dark&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/ryanypm/pen/zYGyObX'>用::first-letter来实现段落首字间隔</a> by ryanypm
+  (<a href='https://codepen.io/ryanypm'>@ryanypm</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+# 等等
+https://codepen.io/chriscoyier/full/pMRgwW
